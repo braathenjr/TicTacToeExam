@@ -12,23 +12,30 @@ import kotlin.coroutines.CoroutineContext
 
 class PlayerView(application: Application) : AndroidViewModel(application) {
 
-    private val repository: PlayerRepository
+    private val  repository: PlayerRepository
+    val allPlayersLive: LiveData<List<Player>>
+    //co-routine
     private var parentJob = Job()
     private val coroutineContext: CoroutineContext get() = parentJob + Dispatchers.Main
     private val scope = CoroutineScope(coroutineContext)
 
-    val allPlayers: LiveData<List<Player>>
-
     init {
-        val playersDao = PlayerRoomDatabase.getDatabase(application).playerDao()
-        repository = PlayerRepository(playersDao)
-        allPlayers = repository.allPlayers
+        val playerDAO = PlayerRoomDatabase.getDatabase(application.applicationContext)
+            .playerDao()
+        repository = PlayerRepository(playerDAO)
+        allPlayersLive = repository.allPlayers
     }
-/*
-    fun insert(player: Player) = viewModelScope.launch(Dispatchers.IO) {
-        repository.insert(player)
-    }*/
+
     fun insert(player: Player) = scope.launch(Dispatchers.IO) {
         repository.insert(player)
+
+    }
+
+    fun delete() = scope.launch(Dispatchers.IO) {
+        repository.deleteAll()
+    }
+
+    fun get() = scope.launch(Dispatchers.IO){
+        repository.getAll()
     }
 }

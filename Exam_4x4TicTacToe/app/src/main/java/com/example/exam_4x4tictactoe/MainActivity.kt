@@ -1,12 +1,13 @@
 package com.example.exam_4x4tictactoe
 
-import android.support.v7.app.AppCompatActivity
+import android.arch.persistence.room.Room
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ListView
-import androidx.room.Room
+
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_start_screen.*
 
