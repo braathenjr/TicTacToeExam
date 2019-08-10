@@ -38,7 +38,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn1"
-                android:onClick="onClick"/>
+                />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -48,7 +48,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn2"
-                android:onClick="onClick"/>
+                />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -58,7 +58,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn3"
-                android:onClick="onClick"/>
+                />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -68,7 +68,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn4"
-                android:onClick="onClick"/>
+                />
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn5"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -93,7 +93,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn6"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -103,7 +103,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn7"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -113,7 +113,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn8"
-                android:onClick="onClick"/>
+                 />
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn9"
-                android:onClick="onClick"/>
+                 />
 
         <Button
                 android:text=""
@@ -139,7 +139,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn10"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -149,7 +149,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn11"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -159,7 +159,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn12"
-                android:onClick="onClick"/>
+                 />
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
@@ -174,7 +174,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn13"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -184,7 +184,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn14"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -194,7 +194,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn15"
-                android:onClick="onClick"/>
+                 />
         <Button
                 android:text=""
                 android:textSize="12pt"
@@ -204,6 +204,6 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:id="@+id/btn16"
-                android:onClick="onClick"/>
+                 />
     </TableRow>
 </TableLayout>

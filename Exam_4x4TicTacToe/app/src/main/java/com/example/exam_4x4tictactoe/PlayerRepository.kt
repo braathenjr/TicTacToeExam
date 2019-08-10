@@ -12,14 +12,16 @@ class PlayerRepository(private val playerDao: PlayerDao) {
     suspend fun insert(player: Player) {
         playerDao.insert(player)
     }
-    //new
-    @WorkerThread
-    suspend fun deleteAll() {
-        playerDao.deleteAll()
-    }
 
     @WorkerThread
     suspend fun getAll(){
         playerDao.getAllPlayers()
     }
+
+    @WorkerThread
+    suspend fun deleteAll() {
+        playerDao.deleteAll()
+    }
+
+
 }
