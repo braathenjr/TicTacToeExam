@@ -18,13 +18,13 @@ private const val Player1Arg = "Player 1"
 private const val Player2Arg = "Player 2"
 
 class GameFragment : Fragment() {
-    private var player1 = ArrayList<Int>()
-    private var player2 = ArrayList<Int>()
-    private var activePlayer = 1
-    private var player1Name: Player? = null
-    private var player2Name: Player? = null
-    private var playAI: Boolean = false
-    private var dataPasser: OnDataPass? = null
+    var player1 = ArrayList<Int>()
+    var player2 = ArrayList<Int>()
+    var activePlayer = 1
+    var player1Name: Player? = null
+    var player2Name: Player? = null
+    var dataPasser: OnDataPass? = null
+    var winner = 0
 
 
     private lateinit var timer: Chronometer
@@ -52,7 +52,7 @@ class GameFragment : Fragment() {
     }
 
     fun checkWinner() {
-        var winner = 0
+
 
         //top left to bottom right
         if(player1.contains(1) && player1.contains(6) && player1.contains(11) && player1.contains(16)){
@@ -139,11 +139,9 @@ class GameFragment : Fragment() {
             disableBtn()
         }
 
-
             if(winner == 1){
 
                 player.text = "${player1Name!!.name} wins"
-                //Toast.makeText(this, "Player 1 won!",Toast.LENGTH_SHORT).show()
                 player1Name!!.wins++
                 dataPasser!!.onPassData(player1Name!!)
                 timer.stop()
@@ -151,13 +149,11 @@ class GameFragment : Fragment() {
 
             }else if (winner == 2){
                 player.text = "${player2Name!!.name} wins"
-                // Toast.makeText(this, "Player 2 won!",Toast.LENGTH_LONG).show()
                 player2Name!!.wins++
                 dataPasser!!.onPassData(player2Name!!)
                 timer.stop()
                 disableBtn()
             }
-
     }
 
     fun disableBtn(){

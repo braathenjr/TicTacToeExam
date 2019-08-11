@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
         setContentView(R.layout.activity_main)
 
         db = Room.databaseBuilder(applicationContext, PlayerRoomDatabase::class.java, "player.db").build()
+
         getHighscoreList()
         .execute()
 
@@ -42,7 +43,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
     }
 
     internal inner class getHighscoreList : AsyncTask<Player, Void, List<Player>>(){
-
 
         override fun doInBackground(vararg params: Player?): List<Player>? {
 
@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
         }
 
     }
-
 
     override fun onClick(v: View) {
         var Player1 = Player(player1Name.text.toString(), 0)
@@ -103,25 +102,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
         }
     }
 
-
     fun hideView(){
-        startBtn.visibility = View.INVISIBLE
-        startAI.visibility = View.INVISIBLE
         player1Name.isEnabled = false
         player2Name.isEnabled = false
+        startBtn.visibility = View.INVISIBLE
+        startAI.visibility = View.INVISIBLE
         player1Name.visibility = View.INVISIBLE
         player2Name.visibility = View.INVISIBLE
         highscore.visibility = View.INVISIBLE
     }
 
-
     fun showView(){
-        startBtn.visibility = View.VISIBLE
-        startAI.visibility = View.VISIBLE
         player1Name.isEnabled = true
         player2Name.isEnabled = true
         player1Name.visibility = View.VISIBLE
         player2Name.visibility = View.VISIBLE
+        startBtn.visibility = View.VISIBLE
+        startAI.visibility = View.VISIBLE
         highscore.visibility = View.VISIBLE
     }
 
@@ -146,15 +143,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
         }else{
             super.onBackPressed()
         }
-
-
     }
      override fun onPassData(player: Player) {
         playerWon = player
         pickQuery(playerWon)
-
     }
-
     private fun refreshPlayerList(player: Player?){
         getHighscoreList().execute(player)
     }

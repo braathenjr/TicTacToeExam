@@ -19,12 +19,12 @@ private const val Player2Arg = "Player 2"
 
 class AiFragment : Fragment() {
 
-    private var player1Name: Player? = null
-    private var playerAI: Player? = null
-    private var player1 = ArrayList<Int>()
-    private var player2 = ArrayList<Int>()
-    private var activePlayer = 1
-    private var dataPasser: OnDataPass? = null
+    var player1Name: Player? = null
+    var playerAI: Player? = null
+    var player1 = ArrayList<Int>()
+    var player2 = ArrayList<Int>()
+    var activePlayer = 1
+    var dataPasser: OnDataPass? = null
 
 
     private lateinit var timer: Chronometer
@@ -183,8 +183,8 @@ class AiFragment : Fragment() {
         
         // pick direct opposite of opponent
         if(player1.contains(1) && !player2.contains(16) && !player1.contains(16)){
-            btn16.text = "O"
             player2.add(16)
+            btn16.text = "O"
             activePlayer = 1
 
             player.text = player1Name!!.name
