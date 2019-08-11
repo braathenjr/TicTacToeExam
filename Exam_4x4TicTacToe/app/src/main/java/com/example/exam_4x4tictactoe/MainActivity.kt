@@ -36,8 +36,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
         refreshPlayerList(null)
 
         highscore = findViewById(R.id.highscore)
-        startBtn.setOnClickListener(this)
 
+        startBtn.setOnClickListener(this)
         startAI.setOnClickListener(this)
 
     }
