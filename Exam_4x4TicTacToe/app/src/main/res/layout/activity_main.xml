@@ -11,7 +11,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/homeScreenFragment"
-            android:name="com.example.exam_4x4tictactoe.HomeFragment"
+            android:name="com.example.exam_4x4tictactoe.StartScreen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout="@layout/fragment_start_screen"
@@ -24,7 +24,7 @@
             android:layout_height="173dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:id="@+id/listView" android:layout_marginTop="8dp"
+            android:id="@+id/highscore" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/homeScreenFragment"
     />
 

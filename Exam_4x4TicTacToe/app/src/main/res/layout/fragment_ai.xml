@@ -12,7 +12,7 @@
     <Chronometer android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:textAlignment="center"
-                 android:id="@+id/timerView"
+                 android:id="@+id/timer"
                  android:layout_marginBottom="8dp"
                  android:textStyle="bold"
                  android:textSize="20dp"/>

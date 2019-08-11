@@ -46,7 +46,8 @@ class GameFragment : Fragment() {
 
         var view = inflater.inflate(R.layout.fragment_game, container, false)
 
-        timer = view.findViewById(R.id.timerView)
+        timer = view.findViewById(R.id.timer)
+
         return inflater.inflate(R.layout.fragment_game, container, false)
     }
 

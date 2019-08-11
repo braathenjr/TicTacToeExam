@@ -9,7 +9,7 @@ import android.view.ViewGroup
 
 
 
-class HomeFragment : Fragment() {
+class StartScreen : Fragment() {
 
 
     override fun onCreateView(
