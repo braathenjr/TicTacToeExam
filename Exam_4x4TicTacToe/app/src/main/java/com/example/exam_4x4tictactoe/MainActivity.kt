@@ -9,12 +9,13 @@ import android.widget.BaseAdapter
 import android.widget.ListView
 import kotlinx.android.synthetic.main.fragment_start_screen.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnDataPass {
+class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnDataPass, AiFragment.OnDataPass {
 
 
     val manager = supportFragmentManager
     var activeFragment: Int = 0
     lateinit var gf: GameFragment
+    lateinit var af: AiFragment
     lateinit var db: PlayerRoomDatabase
     var playerList = arrayListOf<Player>()
     var selectedQuery: Int = 0
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
     override fun onClick(v: View) {
         var Player1 = Player(player1Name.text.toString(), 0)
         var Player2 = Player(player2Name.text.toString(), 0)
+
         startBtn.setOnClickListener {
             gf = GameFragment.newInstance(Player1, Player2)
             manager.beginTransaction().replace(R.id.homeScreenFragment, gf).addToBackStack(null).commit()
@@ -83,23 +85,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GameFragment.OnD
             viewInvisible()
         }
         startAI.setOnClickListener { 
-            gf = GameFragment.newInstance(Player1, playerAI)
-            manager.beginTransaction().replace(R.id.homeScreenFragment, gf).addToBackStack(null).commit()
+            af = AiFragment.newInstance(Player1, playerAI)
+            manager.beginTransaction().replace(R.id.homeScreenFragment, af).addToBackStack(null).commit()
             activeFragment = 1
-            viewInvisible() 
+            viewInvisible()
+            Player2.name = "TTTbot"
         }
     }
-/*
-    fun launchNormalGame (){
-        gameFragment = GameFragment.newInstance("player1", "player2")
-        val transaction =  manager.beginTransaction()
-        transaction.replace(R.id.fragment2,gameFragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-        activeFragment = 1
-
-    }*/
-
 
 
     fun viewInvisible(){
